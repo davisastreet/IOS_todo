@@ -27,16 +27,20 @@ struct ContentView: View
         self.newTask = ""
     }
     
-    var body: some View {
+    var body: some View
+    {
         NavigationView
         {
             VStack
             {
                 searchBar.padding()
-                List(self.sTask.tasks)
+                List
                 {
-                    task in
-                    Text(task.taskItem)
+                    ForEach(self.sTask.tasks)
+                    {
+                        task in
+                        Text(task.taskItem)
+                    }
                 }.navigationTitle("To-Do List")
             }
         }
