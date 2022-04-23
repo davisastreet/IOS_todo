@@ -9,13 +9,13 @@ import Foundation
 import SwiftUI
 import Combine
 
-struct Task : Identifiable
+struct Task : Identifiable, Codable
 {
     var id = String()
     var taskItem = String()
 }
 
-class storeTask : ObservableObject
+class storeTask : ObservableObject, Codable
 {
     @Published var tasks = [Task]()
 }
